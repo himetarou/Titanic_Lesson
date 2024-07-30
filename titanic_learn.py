@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import os
-from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestClassifier
 
 #データの読み込み
 titanic_train_file = "../input/titanic/train.csv"
@@ -40,7 +40,7 @@ dummy_X.describe()
 
 
 #モデルの作成
-model = DecisionTreeRegressor(random_state=1)
+model = RandomForestClassifier(n_estimators=300, random_state=1)
 model.fit(dummy_X, y)
 
 
